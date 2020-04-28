@@ -1,0 +1,12 @@
+version: "3"
+services:
+    azure_function:      
+      image: "ebarrioscode/functionexample"
+      build: 
+        context: .
+        dockerfile: Dockerfile        
+      ports:
+        - "8080:80"
+      environment: 
+        SqlConnectionString: "Server=tcp:serverdatadev.database.windows.net,1433;Initial Catalog=functiondbexample;Persist Security Info=False;User ID=ebarrios;Password=E.barrios2212;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;"    
+        
